@@ -1,9 +1,15 @@
 data = open('data.in', 'r').readlines()
 
 def solve():
-    res = 0
-    for i in range(len(data)):
-        pass
-    return res
+    hor, ver = 0, 0
+    for r in data:
+        d, a = r.split()
+        if d == 'forward':
+            hor += int(a)
+        elif d == 'up':
+            ver -= int(a)
+        else:
+            ver += int(a)
+    return hor * ver
 
 print("Result: " + str(solve()))
